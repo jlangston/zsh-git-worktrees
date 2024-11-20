@@ -22,20 +22,20 @@ case "$1" in
         default_branch="$(cat "$basepath/../.default-branch")"
       fi
 
-      __gwt_switch "$default_branch"
+      __wt_switch "$default_branch"
     fi
 
     git worktree remove "$removing_dir"
     git branch -d "$2"
     ;;
   mv)
-    __gwt_mv "$2" "$3"
+    __wt_mv "$2" "$3"
     ;;
   switch)
-    __gwt_switch "$2"
+    __wt_switch "$2"
     ;;
   *)
-    __gwt_switch "$1"
+    __wt_switch "$1"
     ;;
 esac
 

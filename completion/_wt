@@ -1,12 +1,12 @@
-#compdef gwt
+#compdef wt
 
-__gwt_commands_and_branches() {
+__wt_commands_and_branches() {
   local -a branches
   branches="$(git branch -a | sed '/remotes\/origin\/HEAD\|^*/d' | sed 's/\+ \|.*remotes\/origin\///g' | sort | uniq)"
   _describe 'options' '(ls\:"List current worktrees" switch\:"Switch to another worktree (creates if does not exist)" rm\:"Removes a worktree. If on current worktree, switches to main" '${branches}')'
 }
 
-__gwt_branches() {
+__wt_branches() {
   if [[ $words[2] == "ls" ]]; then
     return
   fi
@@ -20,14 +20,14 @@ __gwt_branches() {
   _describe 'branch' branches
 }
 
-_gwt() {
+_wt() {
   local curcontext="$curcontext" ret=1
 
   _arguments -s \
-    '1: :__gwt_commands_and_branches' \
-    '2: :__gwt_branches' && ret=0
+    '1: :__wt_commands_and_branches' \
+    '2: :__wt_branches' && ret=0
 
   return "$ret"
 }
 
-_gwt "$@"
+_wt "$@"

@@ -20,7 +20,7 @@ $ mkdir my-neat-project
 $ cd my-neat-project
 $ git clone https://github.com/neat-org/my-neat-project main
 $ cd main
-$ gwt main
+$ wt main
 ```
 
 With the above and going forward, you'll have the following directory structure:
@@ -33,18 +33,19 @@ my-neat-project/
   my-other-neat-worktree
 ```
 
-Using `gwt` to switch worktrees, you'll always be in a directory with the same
-name as your project -- thanks to the symlink that gwt handles for you. This
+Using `wt` to switch worktrees, you'll always be in a directory with the same
+name as your project -- thanks to the symlink that wt handles for you. This
 helps with things like docker-compose, allowing you to switch between
 worktrees, all while tricking compose into thinking you're in one "project".
 
 ## Demo
+
 ![demo](https://github.com/egyptianbman/zsh-git-worktrees/raw/main/vhs.gif)
 
 ## Auto completion
 
 This plugin automatically loads auto completion. Feel free to hit tab after
-`gwt` to get suggestions of available worktrees you can switch to.
+`wt` to get suggestions of available worktrees you can switch to.
 
 ## Usage
 
@@ -52,16 +53,16 @@ The following are some example command usage:
 
 ```bash
 # List current worktrees
-$ gwt
+$ wt
 
 # Switch to neat-feature worktree, create it if it doesn't exist.
-$ gwt neat-feature
+$ wt neat-feature
 
 # Rename the current worktree (and branch) to not-as-neat-feature
-$ gwt mv not-as-neat-feature
+$ wt mv not-as-neat-feature
 
 # Remove completed feature and its corresponding branch
-$ gwt rm completed-feature
+$ wt rm completed-feature
 ```
 
 Branch `main` is considered special as it holds your base repository. This

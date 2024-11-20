@@ -16,6 +16,6 @@ if [[ ! -d "../$dir" ]]; then
   git worktree add "../$dir" "$to"
 fi
 
-__gwt_symlink "$to" "$dir"
+__wt_symlink "$to" "$dir"
 
 # vim: ft=zsh sw=2 ts=2 et
